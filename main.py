@@ -12,7 +12,7 @@ movies = [
         'overview': "En un exuberante planeta llamado Pandora viven los Na'vi, seres que ...",
         'year': '2009',
         'rating': 7.8,
-        'category': 'Acción'    
+        'category': 'Accion'    
     },
     {
         'id': 2,
@@ -20,7 +20,7 @@ movies = [
         'overview': "En un exuberante planeta llamado Pandora viven los Na'vi, seres que ...2",
         'year': '2010',
         'rating': 7.8,
-        'category': 'Acción2'
+        'category': 'Accion2'
     } 
 ]
 
@@ -38,3 +38,9 @@ def get_movie(id: int):
         if item['id'] == id:
             return item
     return []
+
+@app.get('/movies/', tags=['movies'])
+def get_movies_by_category(category: str, year: int):
+    for item in movies:
+        return [item for item in movies if item['category']==category]
+
