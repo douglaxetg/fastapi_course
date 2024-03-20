@@ -40,4 +40,9 @@ movies = [
 def message():
     return HTMLResponse('<h1>Hello world</h1>')
 
+
+@app.get('/test', tags=['otg'])
+def message():
+    return HTMLResponse('<h1>Hello world Other Test</h1>')
+
         
